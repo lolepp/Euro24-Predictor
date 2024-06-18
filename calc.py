@@ -53,7 +53,7 @@ def analyze_game(game):
     for score, prob in sorted(score_probs.items(), key=lambda item: item[1], reverse=True):
         if prob * 100 >= 0.1:
             print(f"Punktzahl {score}: {prob*100:.2f}%")
-    print("\n" + "-"*50 + "\n")
+    print("\n" + "-" * 50 + "\n")
 
 def main():
     # Beispiel Wettquoten für verschiedene Spiele
