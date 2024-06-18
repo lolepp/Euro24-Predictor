@@ -1,9 +1,8 @@
 A Python script that calculates the chance of every outcome of every Euro24 match for each score.
 
 
-You might need to install the Python compiler and numpy to run this script. 
+You might need to install the Python compiler and numpy to run this script. To install numpy you may need to run
 
-To install numpy you may need to run
     pip install numpy
 
 
