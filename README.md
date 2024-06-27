@@ -6,12 +6,16 @@ The output of the script is below and also saved in the file output.txt.
 You might need to install the Python compiler and numpy to run this script.
 
 To install numpy you may need to run
+    
     pip install numpy
 
 
 This is the given output of the current version:
-    # Outputs for the round of 16
-    Remember, there cannot be a draw in the round of 16 and higher
+
+# Outputs for the round of 16
+
+Remember, there cannot be a draw in the round of 16 and higher
+    
     Spiel: Spiel 1: Schweiz vs Italien
     Wahrscheinlichkeiten: [0.2893634412996832, 0.31879023194032896, 0.3918463267599877]
     Erwartete Tore Heim: 1.01, Erwartete Tore Auswärts: 1.37
@@ -245,7 +249,8 @@ This is the given output of the current version:
     Punktzahl (3, 4): 0.12%
 
 
-    # Outputs for group phase:
+# Outputs for group phase:
+    
     Spiel: Spiel 1: Deutschand vs Schottland
     Wahrscheinlichkeiten: [0.7468414216554493, 0.1662533947337348, 0.08690518361081592]
     Erwartete Tore Heim: 1.87, Erwartete Tore Auswärts: 0.22
