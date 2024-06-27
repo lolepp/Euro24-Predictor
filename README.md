@@ -16,9 +16,10 @@ This is the given output of the current version:
 
 Remember, there cannot be a draw in the round of 16 and higher
     
-    Spiel: Spiel 1: Schweiz vs Italien
+    Spiel 1: Schweiz vs Italien
     Wahrscheinlichkeiten: [0.2893634412996832, 0.31879023194032896, 0.3918463267599877]
     Erwartete Tore Heim: 1.01, Erwartete Tore Auswärts: 1.37
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
     Punktzahl (1, 1): 12.80%
     Punktzahl (0, 1): 12.64%
     Punktzahl (1, 0): 9.33%
@@ -50,9 +51,10 @@ Remember, there cannot be a draw in the round of 16 and higher
 
     --------------------------------------------------
 
-    Spiel: Spiel 2: Deutschland vs Dänemark
+    Spiel 2: Deutschland vs Dänemark
     Wahrscheinlichkeiten: [0.5922355737488446, 0.24296844051234656, 0.16479598573880894]
     Erwartete Tore Heim: 2.07, Erwartete Tore Auswärts: 0.58
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
     Punktzahl (2, 0): 15.18%
     Punktzahl (1, 0): 14.65%
     Punktzahl (3, 0): 10.49%
@@ -79,9 +81,10 @@ Remember, there cannot be a draw in the round of 16 and higher
 
     --------------------------------------------------
 
-    Spiel: Spiel 3: England vs Slowakei
+    Spiel 3: England vs Slowakei
     Wahrscheinlichkeiten: [0.6626887486393263, 0.2188556375413941, 0.11845561381927956]
     Erwartete Tore Heim: 2.32, Erwartete Tore Auswärts: 0.41
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
     Punktzahl (2, 0): 17.47%
     Punktzahl (1, 0): 15.07%
     Punktzahl (3, 0): 13.51%
@@ -106,9 +109,10 @@ Remember, there cannot be a draw in the round of 16 and higher
 
     --------------------------------------------------
 
-    Spiel: Spiel 4: Spanien vs Georgien
+    Spiel 4: Spanien vs Georgien
     Wahrscheinlichkeiten: [0.7816543039503191, 0.15257892013110227, 0.06576677591857857]
     Erwartete Tore Heim: 2.74, Erwartete Tore Auswärts: 0.23
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
     Punktzahl (2, 0): 19.28%
     Punktzahl (3, 0): 17.58%
     Punktzahl (1, 0): 14.09%
@@ -130,9 +134,10 @@ Remember, there cannot be a draw in the round of 16 and higher
 
     --------------------------------------------------
 
-    Spiel: Spiel 5: Frankreich vs Belgien
+    Spiel 5: Frankreich vs Belgien
     Wahrscheinlichkeiten: [0.4963871326339192, 0.28579865212255956, 0.21781421524352113]
     Erwartete Tore Heim: 1.74, Erwartete Tore Auswärts: 0.76
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
     Punktzahl (1, 0): 14.27%
     Punktzahl (2, 0): 12.39%
     Punktzahl (1, 1): 10.88%
@@ -163,9 +168,10 @@ Remember, there cannot be a draw in the round of 16 and higher
 
     --------------------------------------------------
 
-    Spiel: Spiel 6: Portugal vs Slowenien
+    Spiel 6: Portugal vs Slowenien
     Wahrscheinlichkeiten: [0.6665656718678987, 0.2151189213755491, 0.11831540675655201]
     Erwartete Tore Heim: 2.33, Erwartete Tore Auswärts: 0.41
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
     Punktzahl (2, 0): 17.45%
     Punktzahl (1, 0): 14.96%
     Punktzahl (3, 0): 13.57%
@@ -190,9 +196,10 @@ Remember, there cannot be a draw in the round of 16 and higher
 
     --------------------------------------------------
 
-    Spiel: Spiel 7: Rumänien vs Niederlande
+    Spiel 7: Rumänien vs Niederlande
     Wahrscheinlichkeiten: [0.12181130353183728, 0.2180225409634501, 0.6601661555047127]
     Erwartete Tore Heim: 0.43, Erwartete Tore Auswärts: 2.31
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
     Punktzahl (0, 2): 17.29%
     Punktzahl (0, 1): 14.97%
     Punktzahl (0, 3): 13.32%
@@ -217,9 +224,10 @@ Remember, there cannot be a draw in the round of 16 and higher
 
     --------------------------------------------------
 
-    Spiel: Spiel 8: Österreich vs Türkei
+    Spiel 8: Österreich vs Türkei
     Wahrscheinlichkeiten: [0.4945015963107485, 0.27633912735012417, 0.2291592763391274]
     Erwartete Tore Heim: 1.73, Erwartete Tore Auswärts: 0.80
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
     Punktzahl (1, 0): 13.75%
     Punktzahl (2, 0): 11.90%
     Punktzahl (1, 1): 11.03%

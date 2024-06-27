@@ -8,22 +8,22 @@ def get_probs(odds):
     total = sum(1/o for o in odds)
     return [(1/o) / total for o in odds]
 
-def poisson_distribution(lam, k):
+def poisson_distribution(lam, k): # lam is the expected decimal value of the number of goals a team scores
     """
     Calculate the Poisson probability for k goals given an average lam.
     """
-    return (lam**k * np.exp(-lam)) / math.factorial(k) # (lam^k * -lam)/k!
+    return (lam**k * np.exp(-lam)) / math.factorial(k) # (lam^k * e^(-lam)) / k!
 
 def expected_goals(probabilities, avg_goals=3.5): # avg goals is a variable that can be changed what to expect as of average goals per game
     """
     Calculate expected goals for each team.
     """
     # average goals after the group phase per game are 3.5
-    home_goals = avg_goals * probabilities[0]
-    away_goals = avg_goals * probabilities[2]
+    home_goals = avg_goals * probabilities[0] # avg goals * chance of first team winning
+    away_goals = avg_goals * probabilities[2] # avg goals * chance of the other team winning
     return home_goals, away_goals
 
-def exact_score_probabilities(home_goals, away_goals, max_goals=5): # function calculates every chance of every score until max_goals
+def exact_score_probabilities(home_goals, away_goals, max_goals=5): # function calculates every chance of every score until max goals variable
     """
     Calculate the probabilities of exact scores using the Poisson distribution.
     """
@@ -34,8 +34,8 @@ def exact_score_probabilities(home_goals, away_goals, max_goals=5): # function c
             probabilities[(i, j)] = prob
     return probabilities
 
-def analyze_game(game, file):
-    game_name = f"Spiel: {game['name']}"
+def analyze_game(game, file): # This the function where every function is calculated, combined and printed
+    game_name = f"{game['name']}"
     write_output(game_name + "\n", file)
     print(game_name)
     odds = game['odds']
@@ -51,7 +51,9 @@ def analyze_game(game, file):
     print(expected_goals_print)
     # Wahrscheinlichkeiten für alle bestimmten Punktzahlen berechnen
     score_probs = exact_score_probabilities(home_goals, away_goals)
-    print("Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:")
+    all_probs = "Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:"
+    write_output(all_probs + "\n", file)
+    print(all_probs)
     for score, prob in sorted(score_probs.items(), key=lambda item: item[1], reverse=True):
         if prob * 100 >= 0.1: # only print the probabilites of the score which are at least 0.1 %
             exact_score = f"Punktzahl {score}: {prob * 100:.2f}%"
