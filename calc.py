@@ -14,13 +14,13 @@ def poisson_distribution(lam, k): # lam is the expected decimal value of the num
     """
     return (lam**k * np.exp(-lam)) / math.factorial(k) # (lam^k * e^(-lam)) / k!
 
-def expected_goals(probabilities, avg_goals=3.5): # avg goals is a variable that can be changed what to expect as of average goals per game
+def expected_goals(probabilities, avg_goals = [2.25, 2.25]): # avg goals is a variable that can be changed what to expect as of average goals per game
     """
     Calculate expected goals for each team.
     """
-    # average goals after the group phase per game are 3.5
-    home_goals = avg_goals * probabilities[0] # avg goals * chance of first team winning
-    away_goals = avg_goals * probabilities[2] # avg goals * chance of the other team winning
+    # average goals after the group phase per game are 2.25
+    home_goals = avg_goals[0] * probabilities[0] # avg goals of first team * chance of first team winning
+    away_goals = avg_goals[1] * probabilities[2] # avg goals of other team * chance of the other team winning
     return home_goals, away_goals
 
 def exact_score_probabilities(home_goals, away_goals, max_goals=5): # function calculates every chance of every score until max goals variable
@@ -39,16 +39,20 @@ def analyze_game(game, file): # This the function where every function is calcul
     write_output(game_name + "\n", file)
     print(game_name)
     odds = game['odds']
+    
     # Wahrscheinlichkeiten für Sieg, Unentschieden und Niederlage nach Quoten ausgeben
     probabilities = get_probs(odds)
     probs_print = f"Wahrscheinlichkeiten: {probabilities}"
     write_output(probs_print + "\n", file)
     print(probs_print)
+    
     # Erwartete Tore für beide Teams berechnen
+    # avg_goals = game['average goals']
     home_goals, away_goals = expected_goals(probabilities)
     expected_goals_print = f"Erwartete Tore Heim: {home_goals:.2f}, Erwartete Tore Auswärts: {away_goals:.2f}"
     write_output(expected_goals_print + "\n", file)
     print(expected_goals_print)
+    
     # Wahrscheinlichkeiten für alle bestimmten Punktzahlen berechnen
     score_probs = exact_score_probabilities(home_goals, away_goals)
     all_probs = "Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:"
@@ -125,29 +129,43 @@ def main():
     
     # Achtelfinale
     roundOf16 = [
-        {"name": "Spiel 1: Schweiz vs Italien", "odds": [3.25, 2.95, 2.40]},
-        {"name": "Spiel 2: Deutschland vs Dänemark", "odds": [1.60, 3.90, 5.75]},
-        {"name": "Spiel 3: England vs Slowakei", "odds": [1.43, 4.33, 8]},
-        {"name": "Spiel 4: Spanien vs Georgien", "odds": [1.22, 6.25, 14.5]},
-        {"name": "Spiel 5: Frankreich vs Belgien", "odds": [1.90, 3.30, 4.33]},
-        {"name": "Spiel 6: Portugal vs Slowenien", "odds": [1.42, 4.4, 8]},
-        {"name": "Spiel 7: Rumänien vs Niederlande", "odds": [7.75, 4.33, 1.43]},
-        {"name": "Spiel 8: Österreich vs Türkei", "odds": [1.90, 3.40, 4.10]}
+        {"name": "Spiel 1: Schweiz vs Italien", "odds": [3.25, 2.95, 2.40], "average goals": []},
+        {"name": "Spiel 2: Deutschland vs Dänemark", "odds": [1.60, 3.90, 5.75], "average goals": []},
+        {"name": "Spiel 3: England vs Slowakei", "odds": [1.43, 4.33, 8], "average goals": []},
+        {"name": "Spiel 4: Spanien vs Georgien", "odds": [1.22, 6.25, 14.5], "average goals": []},
+        {"name": "Spiel 5: Frankreich vs Belgien", "odds": [1.90, 3.30, 4.33], "average goals": []},
+        {"name": "Spiel 6: Portugal vs Slowenien", "odds": [1.42, 4.4, 8], "average goals": []},
+        {"name": "Spiel 7: Rumänien vs Niederlande", "odds": [7.75, 4.33, 1.43], "average goals": []},
+        {"name": "Spiel 8: Österreich vs Türkei", "odds": [1.90, 3.40, 4.10], "average goals": []}
+    ]
+    
+    quaterfinals = [
+        {"name": "Spiel 1: Spanien vs Deutschland", "odds": [2.55, 3.25, 2.75], "average goals": [2.25, 2.5]},
+        {"name": "Spiel 2: Portugal vs Frankreich", "odds": [3.30, 3.10, 2.30], "average goals": [1.25, 0.75]},
+        {"name": "Spiel 3: England vs Schweiz", "odds": [2.15, 3.10, 3.70], "average goals": [1.0, 1.75]},
+        {"name": "Spiel 4: Niederlande vs Türkei", "odds": [1.63, 4.00, 5.25], "average goals": [1.75, 1.75]}
+    ]
+    
+    number_of_games = 4
+    # How many goals each team scored per game 
+    scores = [
+        {[3, 1, 1, 4]}, # Spanien
+        {[5, 2, 1, 2]}, # Deutschland
+        {[2, 3, 0, 0]}, # Portugal
+        {[1, 0, 1, 1]}, # Frankreich
+        {[1, 1, 0, 2]}, # England
+        {[3, 1, 1, 2]}, # Schweiz
+        {[2, 0, 2, 3]}, # Niederlande
+        {[3, 0, 2, 2]} # Türkei
     ]
     
     output_file = 'output.txt'
     clean_output(output_file)
-
-    # for game in group_games:
-    #     analyze_game(game, output_file)
-    #     if not game == group_games[len(group_games) - 1]:
-    #         lines = "\n" + "-" * 50 + "\n"
-    #         write_output(lines + "\n", output_file)
-    #         print(lines)
- 
-    for game in roundOf16:
+    
+    games = quaterfinals # change here what games shall be predicted
+    for game in games:
         analyze_game(game, output_file)
-        if not game == roundOf16[len(roundOf16) - 1]:
+        if not game == games[len(games) - 1]:
             lines = "\n" + "-" * 50 + "\n"
             write_output(lines + "\n", output_file)
             print(lines)

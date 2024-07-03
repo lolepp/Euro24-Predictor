@@ -2,6 +2,7 @@ A Python script that calculates the chance of every outcome of every Euro24 matc
 
 The output of the script is below and also saved in the file output.txt.
 
+Also there is another variant of the predictions saved in output2.txt that is more based on quota alone as I tried to change the calculations of the script to consider recent games.
 
 You might need to install the Python compiler and numpy to run this script.
 
@@ -12,10 +13,124 @@ To install numpy you may need to run
 
 This is the given output of the current version:
 
-# Outputs for the round of 16
+# Outputs for the quarterfinals
 
 Remember, there cannot be a draw in the round of 16 and higher
-    
+
+    Spiel 1: Spanien vs Deutschland
+    Wahrscheinlichkeiten: [0.36874677668901495, 0.2893243940175348, 0.3419288292934502]
+    Erwartete Tore Heim: 0.83, Erwartete Tore Auswärts: 0.77
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
+    Punktzahl (0, 0): 20.21%
+    Punktzahl (1, 0): 16.77%
+    Punktzahl (0, 1): 15.55%
+    Punktzahl (1, 1): 12.90%
+    Punktzahl (2, 0): 6.96%
+    Punktzahl (0, 2): 5.98%
+    Punktzahl (2, 1): 5.35%
+    Punktzahl (1, 2): 4.96%
+    Punktzahl (2, 2): 2.06%
+    Punktzahl (3, 0): 1.92%
+    Punktzahl (0, 3): 1.53%
+    Punktzahl (3, 1): 1.48%
+    Punktzahl (1, 3): 1.27%
+    Punktzahl (3, 2): 0.57%
+    Punktzahl (2, 3): 0.53%
+    Punktzahl (4, 0): 0.40%
+    Punktzahl (4, 1): 0.31%
+    Punktzahl (0, 4): 0.29%
+    Punktzahl (1, 4): 0.24%
+    Punktzahl (3, 3): 0.15%
+    Punktzahl (4, 2): 0.12%
+    Punktzahl (2, 4): 0.10%
+
+    --------------------------------------------------
+
+    Spiel 2: Portugal vs Frankreich
+    Wahrscheinlichkeiten: [0.28577154308617236, 0.30420841683366734, 0.41002004008016035]
+    Erwartete Tore Heim: 0.64, Erwartete Tore Auswärts: 0.92
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
+    Punktzahl (0, 0): 20.90%
+    Punktzahl (0, 1): 19.28%
+    Punktzahl (1, 0): 13.44%
+    Punktzahl (1, 1): 12.40%
+    Punktzahl (0, 2): 8.89%
+    Punktzahl (1, 2): 5.72%
+    Punktzahl (2, 0): 4.32%
+    Punktzahl (2, 1): 3.99%
+    Punktzahl (0, 3): 2.73%
+    Punktzahl (2, 2): 1.84%
+    Punktzahl (1, 3): 1.76%
+    Punktzahl (3, 0): 0.93%
+    Punktzahl (3, 1): 0.85%
+    Punktzahl (0, 4): 0.63%
+    Punktzahl (2, 3): 0.57%
+    Punktzahl (1, 4): 0.41%
+    Punktzahl (3, 2): 0.39%
+    Punktzahl (4, 0): 0.15%
+    Punktzahl (4, 1): 0.14%
+    Punktzahl (2, 4): 0.13%
+    Punktzahl (3, 3): 0.12%
+    Punktzahl (0, 5): 0.12%
+
+    --------------------------------------------------
+
+    Spiel 3: England vs Schweiz
+    Wahrscheinlichkeiten: [0.43963204292832503, 0.3049060942889996, 0.2554618627826753]
+    Erwartete Tore Heim: 0.99, Erwartete Tore Auswärts: 0.57
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
+    Punktzahl (0, 0): 20.93%
+    Punktzahl (1, 0): 20.70%
+    Punktzahl (0, 1): 12.03%
+    Punktzahl (1, 1): 11.90%
+    Punktzahl (2, 0): 10.24%
+    Punktzahl (2, 1): 5.89%
+    Punktzahl (0, 2): 3.46%
+    Punktzahl (1, 2): 3.42%
+    Punktzahl (3, 0): 3.38%
+    Punktzahl (3, 1): 1.94%
+    Punktzahl (2, 2): 1.69%
+    Punktzahl (4, 0): 0.83%
+    Punktzahl (0, 3): 0.66%
+    Punktzahl (1, 3): 0.66%
+    Punktzahl (3, 2): 0.56%
+    Punktzahl (4, 1): 0.48%
+    Punktzahl (2, 3): 0.32%
+    Punktzahl (5, 0): 0.17%
+    Punktzahl (4, 2): 0.14%
+    Punktzahl (3, 3): 0.11%
+
+    --------------------------------------------------
+
+    Spiel 4: Niederlande vs Türkei
+    Wahrscheinlichkeiten: [0.5820802439193403, 0.23719769939713117, 0.1807220566835285]
+    Erwartete Tore Heim: 1.31, Erwartete Tore Auswärts: 0.41
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
+    Punktzahl (1, 0): 23.54%
+    Punktzahl (0, 0): 17.97%
+    Punktzahl (2, 0): 15.41%
+    Punktzahl (1, 1): 9.57%
+    Punktzahl (0, 1): 7.31%
+    Punktzahl (3, 0): 6.73%
+    Punktzahl (2, 1): 6.27%
+    Punktzahl (3, 1): 2.74%
+    Punktzahl (4, 0): 2.20%
+    Punktzahl (1, 2): 1.95%
+    Punktzahl (0, 2): 1.49%
+    Punktzahl (2, 2): 1.27%
+    Punktzahl (4, 1): 0.90%
+    Punktzahl (5, 0): 0.58%
+    Punktzahl (3, 2): 0.56%
+    Punktzahl (1, 3): 0.26%
+    Punktzahl (5, 1): 0.23%
+    Punktzahl (0, 3): 0.20%
+    Punktzahl (4, 2): 0.18%
+    Punktzahl (2, 3): 0.17%
+
+
+
+# Outputs for the round of 16
+
     Spiel 1: Schweiz vs Italien
     Wahrscheinlichkeiten: [0.2893634412996832, 0.31879023194032896, 0.3918463267599877]
     Erwartete Tore Heim: 1.01, Erwartete Tore Auswärts: 1.37
