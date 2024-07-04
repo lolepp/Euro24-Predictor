@@ -155,6 +155,11 @@ def main():
         {"name": "Spiel 4: Niederlande vs Türkei", "odds": [1.63, 4.00, 5.25], "average goals": [0.0, 0.0]}
     ]
 
+    halffinals = [
+        {"name": "Spiel 1: vs ", "odds": [3.00, 3.00, 3.00], "average goals": [0.0, 0.0]},
+        {"name": "Spiel 2: vs ", "odds": [3.00, 3.00, 3.00], "average goals": [0.0, 0.0]}
+    ]
+
     number_of_games = 4 
     scores = [ # How many goals each team scored per game
         [3, 1, 1, 4], # Spanien
