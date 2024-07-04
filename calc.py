@@ -14,7 +14,7 @@ def poisson_distribution(lam, k): # lam is the expected decimal value of the num
     """
     return (lam**k * np.exp(-lam)) / math.factorial(k) # (lam^k * e^(-lam)) / k!
 
-def expected_goals(probabilities, avg_goals = [2.25, 2.25]): # avg goals is a variable that can be changed what to expect as of average goals per game
+def expected_goals(probabilities, avg_goals): # avg goals is a variable that can be changed what to expect as of average goals per game
     """
     Calculate expected goals for each team.
     """
@@ -34,35 +34,31 @@ def exact_score_probabilities(home_goals, away_goals, max_goals=5): # function c
             probabilities[(i, j)] = prob
     return probabilities
 
-def analyze_game(game, file): # This the function where every function is calculated, combined and printed
-    game_name = f"{game['name']}"
-    write_output(game_name + "\n", file)
-    print(game_name)
+def analyze_game(game, output = ""): # This the function where every function is calculated, combined and printed
+    # Quoten ausgeben
+    output += f"{game['name']}" + "\n"
     odds = game['odds']
     
     # Wahrscheinlichkeiten für Sieg, Unentschieden und Niederlage nach Quoten ausgeben
     probabilities = get_probs(odds)
-    probs_print = f"Wahrscheinlichkeiten: {probabilities}"
-    write_output(probs_print + "\n", file)
-    print(probs_print)
+    output += f"Wahrscheinlichkeiten: {probabilities}" + "\n" 
     
-    # Erwartete Tore für beide Teams berechnen
-    # avg_goals = game['average goals']
-    home_goals, away_goals = expected_goals(probabilities)
-    expected_goals_print = f"Erwartete Tore Heim: {home_goals:.2f}, Erwartete Tore Auswärts: {away_goals:.2f}"
-    write_output(expected_goals_print + "\n", file)
-    print(expected_goals_print)
+    # Durchschnittstore angeben
+    avg_goals = game['average goals']
+    output += f"Durchschnittstore Heim: {avg_goals[0]}, Durchschnittstore Auswärts: {avg_goals[1]}" + "\n"
+
+    # Erwartete Anzahl an Toren für beide Teams berechnen
+    home_goals, away_goals = expected_goals(probabilities, avg_goals)
+    output += f"Erwartete Tore Heim: {home_goals:.2f}, Erwartete Tore Auswärts: {away_goals:.2f}" + "\n" 
     
     # Wahrscheinlichkeiten für alle bestimmten Punktzahlen berechnen
     score_probs = exact_score_probabilities(home_goals, away_goals)
-    all_probs = "Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:"
-    write_output(all_probs + "\n", file)
-    print(all_probs)
-    for score, prob in sorted(score_probs.items(), key=lambda item: item[1], reverse=True):
+    output += "Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:" + "\n" 
+    for score, prob in sorted(score_probs.items(), key=lambda item: item[1], reverse=True): # sorting the list of chances of each score in reverse order from most to least probable
         if prob * 100 >= 0.1: # only print the probabilites of the score which are at least 0.1 %
             exact_score = f"Punktzahl {score}: {prob * 100:.2f}%"
-            write_output(exact_score + "\n", file)
-            print(exact_score)
+            output += exact_score + "\n" 
+    return output
 
 def clean_output(file):
     with open(file, 'w') as file:
@@ -71,6 +67,19 @@ def clean_output(file):
 def write_output(text, file):
     with open(file, 'a', encoding='utf-8') as file:
         file.write(text)
+
+def printer(input, file):
+    print(input)
+    write_output(input, file)
+
+def average_goal_calc(scores, number_of_games):
+    goals = [0] * len(scores)
+    for i in range(len(scores)):
+        for j in range(number_of_games):
+            goals[i] += scores[i][j]
+        goals[i] /= number_of_games
+    return goals
+
 
 def main():
     # Gruppenphase
@@ -139,36 +148,39 @@ def main():
         {"name": "Spiel 8: Österreich vs Türkei", "odds": [1.90, 3.40, 4.10], "average goals": []}
     ]
     
-    quaterfinals = [
-        {"name": "Spiel 1: Spanien vs Deutschland", "odds": [2.55, 3.25, 2.75], "average goals": [2.25, 2.5]},
-        {"name": "Spiel 2: Portugal vs Frankreich", "odds": [3.30, 3.10, 2.30], "average goals": [1.25, 0.75]},
-        {"name": "Spiel 3: England vs Schweiz", "odds": [2.15, 3.10, 3.70], "average goals": [1.0, 1.75]},
-        {"name": "Spiel 4: Niederlande vs Türkei", "odds": [1.63, 4.00, 5.25], "average goals": [1.75, 1.75]}
+    quarterfinals = [
+        {"name": "Spiel 1: Spanien vs Deutschland", "odds": [2.60, 3.10, 2.80], "average goals": [0.0, 0.0]},
+        {"name": "Spiel 2: Portugal vs Frankreich", "odds": [3.20, 3, 2.40], "average goals": [0.0, 0.0]},
+        {"name": "Spiel 3: England vs Schweiz", "odds": [2.20, 3.00, 3.70], "average goals": [0.0, 0.0]},
+        {"name": "Spiel 4: Niederlande vs Türkei", "odds": [1.63, 4.00, 5.25], "average goals": [0.0, 0.0]}
     ]
-    
-    number_of_games = 4
-    # How many goals each team scored per game 
-    scores = [
-        {[3, 1, 1, 4]}, # Spanien
-        {[5, 2, 1, 2]}, # Deutschland
-        {[2, 3, 0, 0]}, # Portugal
-        {[1, 0, 1, 1]}, # Frankreich
-        {[1, 1, 0, 2]}, # England
-        {[3, 1, 1, 2]}, # Schweiz
-        {[2, 0, 2, 3]}, # Niederlande
-        {[3, 0, 2, 2]} # Türkei
+
+    number_of_games = 4 
+    scores = [ # How many goals each team scored per game
+        [3, 1, 1, 4], # Spanien
+        [5, 2, 1, 2], # Deutschland
+        [2, 3, 0, 0], # Portugal
+        [1, 0, 1, 1], # Frankreich
+        [1, 1, 0, 2], # England
+        [3, 1, 1, 2], # Schweiz
+        [2, 0, 2, 3], # Niederlande
+        [3, 0, 2, 2]  # Türkei
     ]
-    
+    avg_goals = average_goal_calc(scores, number_of_games) # [2.25, 2.5, 1.25, 0.75, 1.0, 1.75, 1.75, 1.75]
+    counter = 0
+    for game in quarterfinals:
+        game['average goals'] = avg_goals[counter], avg_goals[counter + 1]
+        counter += 2
     output_file = 'output.txt'
     clean_output(output_file)
     
-    games = quaterfinals # change here what games shall be predicted
+    output = ""
+    games = quarterfinals # change here what games shall be predicted
     for game in games:
-        analyze_game(game, output_file)
+        output += analyze_game(game)
         if not game == games[len(games) - 1]:
-            lines = "\n" + "-" * 50 + "\n"
-            write_output(lines + "\n", output_file)
-            print(lines)
- 
+            output += "\n" + "-" * 50 + "\n"
+    printer(output, output_file)
+
 if __name__ == "__main__":
     main()
