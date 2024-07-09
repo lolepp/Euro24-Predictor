@@ -13,39 +13,84 @@ To install numpy you may need to run
 
 This is the given output of the current version:
 
-# Output for the quarterfinals
+# Output for the semifinals
 
 Remember, there cannot be a draw in the round of 16 and higher
 
-    Spiel 1: Spanien vs Deutschland
-    Wahrscheinlichkeiten: [0.3613655287260616, 0.30308076602830974, 0.33555370524562866]
-    Durchschnittstore Heim: 2.25, Durchschnittstore Auswärts: 2.5
-    Erwartete Tore Heim: 0.81, Erwartete Tore Auswärts: 0.84
+    Spiel 1: Spanien vs Frankreich
+    Wahrscheinlichkeiten: [0.3555, 0.3305, 0.314]
+    Durchschnittstore Heim: 2.2, Durchschnittstore Auswärts: 0.6
+    Erwartete Tore Heim: 0.78, Erwartete Tore Auswärts: 0.19
     Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
-    Punktzahl (0, 0): 19.17%
-    Punktzahl (0, 1): 16.08%
-    Punktzahl (1, 0): 15.58%
-    Punktzahl (1, 1): 13.07%
-    Punktzahl (0, 2): 6.74%
-    Punktzahl (2, 0): 6.34%
-    Punktzahl (1, 2): 5.48%
-    Punktzahl (2, 1): 5.31%
-    Punktzahl (2, 2): 2.23%
-    Punktzahl (0, 3): 1.89%
-    Punktzahl (3, 0): 1.72%
-    Punktzahl (1, 3): 1.53%
-    Punktzahl (3, 1): 1.44%
-    Punktzahl (2, 3): 0.62%
-    Punktzahl (3, 2): 0.60%
-    Punktzahl (0, 4): 0.40%
-    Punktzahl (4, 0): 0.35%
-    Punktzahl (1, 4): 0.32%
-    Punktzahl (4, 1): 0.29%
-    Punktzahl (3, 3): 0.17%
-    Punktzahl (2, 4): 0.13%
-    Punktzahl (4, 2): 0.12%
+    Punktzahl (0, 0): 37.89%
+    Punktzahl (1, 0): 29.63%
+    Punktzahl (2, 0): 11.59%
+    Punktzahl (0, 1): 7.14%
+    Punktzahl (1, 1): 5.58%
+    Punktzahl (3, 0): 3.02%
+    Punktzahl (2, 1): 2.18%
+    Punktzahl (0, 2): 0.67%
+    Punktzahl (4, 0): 0.59%
+    Punktzahl (3, 1): 0.57%
+    Punktzahl (1, 2): 0.53%
+    Punktzahl (2, 2): 0.21%
+    Punktzahl (4, 1): 0.11%
 
     --------------------------------------------------
+
+    Spiel 2: Niederlande vs England
+    Wahrscheinlichkeiten: [0.3031, 0.3356, 0.3614]
+    Durchschnittstore Heim: 1.8, Durchschnittstore Auswärts: 1.0
+    Erwartete Tore Heim: 0.55, Erwartete Tore Auswärts: 0.36
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
+    Punktzahl (0, 0): 40.38%
+    Punktzahl (1, 0): 22.03%
+    Punktzahl (0, 1): 14.59%
+    Punktzahl (1, 1): 7.96%
+    Punktzahl (2, 0): 6.01%
+    Punktzahl (0, 2): 2.64%
+    Punktzahl (2, 1): 2.17%
+    Punktzahl (1, 2): 1.44%
+    Punktzahl (3, 0): 1.09%
+    Punktzahl (3, 1): 0.39%
+    Punktzahl (2, 2): 0.39%
+    Punktzahl (0, 3): 0.32%
+    Punktzahl (1, 3): 0.17%
+    Punktzahl (4, 0): 0.15%
+
+
+# Output for the quarterfinals
+
+    Spiel 1: Spanien vs Deutschland
+    Wahrscheinlichkeiten: [0.353386621792175, 0.31215818258308786, 0.334455195624737]
+    Durchschnittstore Heim: 2.25, Durchschnittstore Auswärts: 2.5
+    Erwartete Tore Heim: 0.80, Erwartete Tore Auswärts: 0.84
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
+    Punktzahl (0, 0): 19.57%
+    Punktzahl (0, 1): 16.36%
+    Punktzahl (1, 0): 15.56%
+    Punktzahl (1, 1): 13.01%
+    Punktzahl (0, 2): 6.84%
+    Punktzahl (2, 0): 6.19%
+    Punktzahl (1, 2): 5.44%
+    Punktzahl (2, 1): 5.17%
+    Punktzahl (2, 2): 2.16%
+    Punktzahl (0, 3): 1.91%
+    Punktzahl (3, 0): 1.64%
+    Punktzahl (1, 3): 1.52%
+    Punktzahl (3, 1): 1.37%
+    Punktzahl (2, 3): 0.60%
+    Punktzahl (3, 2): 0.57%
+    Punktzahl (0, 4): 0.40%
+    Punktzahl (4, 0): 0.33%
+    Punktzahl (1, 4): 0.32%
+    Punktzahl (4, 1): 0.27%
+    Punktzahl (3, 3): 0.16%
+    Punktzahl (2, 4): 0.13%
+    Punktzahl (4, 2): 0.11%
+
+    --------------------------------------------------
+
     Spiel 2: Portugal vs Frankreich
     Wahrscheinlichkeiten: [0.29411764705882354, 0.3137254901960784, 0.39215686274509803]
     Durchschnittstore Heim: 1.25, Durchschnittstore Auswärts: 0.75
@@ -65,48 +110,48 @@ Remember, there cannot be a draw in the round of 16 and higher
     Punktzahl (3, 1): 0.13%
 
     --------------------------------------------------
+    
     Spiel 3: England vs Schweiz
-    Wahrscheinlichkeiten: [0.4295665634674923, 0.315015479876161, 0.25541795665634676]
+    Wahrscheinlichkeiten: [0.4277950310559006, 0.32453416149068326, 0.24767080745341613]
     Durchschnittstore Heim: 1.0, Durchschnittstore Auswärts: 1.75
-    Erwartete Tore Heim: 0.43, Erwartete Tore Auswärts: 0.45
+    Erwartete Tore Heim: 0.43, Erwartete Tore Auswärts: 0.43
     Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
-    Punktzahl (0, 0): 41.62%
-    Punktzahl (0, 1): 18.60%
-    Punktzahl (1, 0): 17.88%
-    Punktzahl (1, 1): 7.99%
-    Punktzahl (0, 2): 4.16%
-    Punktzahl (2, 0): 3.84%
-    Punktzahl (1, 2): 1.79%
-    Punktzahl (2, 1): 1.72%
-    Punktzahl (0, 3): 0.62%
+    Punktzahl (0, 0): 42.26%
+    Punktzahl (0, 1): 18.32%
+    Punktzahl (1, 0): 18.08%
+    Punktzahl (1, 1): 7.84%
+    Punktzahl (0, 2): 3.97%
+    Punktzahl (2, 0): 3.87%
+    Punktzahl (1, 2): 1.70%
+    Punktzahl (2, 1): 1.68%
+    Punktzahl (0, 3): 0.57%
     Punktzahl (3, 0): 0.55%
-    Punktzahl (2, 2): 0.38%
-    Punktzahl (1, 3): 0.27%
-    Punktzahl (3, 1): 0.25%
+    Punktzahl (2, 2): 0.36%
+    Punktzahl (1, 3): 0.25%
+    Punktzahl (3, 1): 0.24%
 
     --------------------------------------------------
+
     Spiel 4: Niederlande vs Türkei
-    Wahrscheinlichkeiten: [0.5820802439193403, 0.23719769939713117, 0.1807220566835285]
+    Wahrscheinlichkeiten: [0.5993545412632548, 0.24281542953742125, 0.1578300291993238]
     Durchschnittstore Heim: 1.75, Durchschnittstore Auswärts: 1.75
-    Erwartete Tore Heim: 1.02, Erwartete Tore Auswärts: 0.32
+    Erwartete Tore Heim: 1.05, Erwartete Tore Auswärts: 0.28
     Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
-    Punktzahl (1, 0): 26.81%
-    Punktzahl (0, 0): 26.32%
-    Punktzahl (2, 0): 13.65%
-    Punktzahl (1, 1): 8.48%
-    Punktzahl (0, 1): 8.32%
-    Punktzahl (3, 0): 4.64%
-    Punktzahl (2, 1): 4.32%
-    Punktzahl (3, 1): 1.47%
-    Punktzahl (1, 2): 1.34%
-    Punktzahl (0, 2): 1.32%
-    Punktzahl (4, 0): 1.18%
-    Punktzahl (2, 2): 0.68%
+    Punktzahl (1, 0): 27.88%
+    Punktzahl (0, 0): 26.58%
+    Punktzahl (2, 0): 14.62%
+    Punktzahl (1, 1): 7.70%
+    Punktzahl (0, 1): 7.34%
+    Punktzahl (3, 0): 5.11%
+    Punktzahl (2, 1): 4.04%
+    Punktzahl (3, 1): 1.41%
+    Punktzahl (4, 0): 1.34%
+    Punktzahl (1, 2): 1.06%
+    Punktzahl (0, 2): 1.01%
+    Punktzahl (2, 2): 0.56%
     Punktzahl (4, 1): 0.37%
-    Punktzahl (5, 0): 0.24%
-    Punktzahl (3, 2): 0.23%
-    Punktzahl (1, 3): 0.14%
-    Punktzahl (0, 3): 0.14%
+    Punktzahl (5, 0): 0.28%
+    Punktzahl (3, 2): 0.19%
 
 
 # Output for the round of 16

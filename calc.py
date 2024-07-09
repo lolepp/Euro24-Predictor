@@ -41,7 +41,8 @@ def analyze_game(game, output = ""): # This the function where every function is
     
     # Wahrscheinlichkeiten für Sieg, Unentschieden und Niederlage nach Quoten ausgeben
     probabilities = get_probs(odds)
-    output += f"Wahrscheinlichkeiten: {probabilities}" + "\n" 
+    probs = [round(prob, 4) for prob in probabilities]
+    output += f"Wahrscheinlichkeiten: {probs}" + "\n" 
     
     # Durchschnittstore angeben
     avg_goals = game['average goals']
@@ -149,42 +150,47 @@ def main():
     ]
     
     quarterfinals = [
-        {"name": "Spiel 1: Spanien vs Deutschland", "odds": [2.60, 3.10, 2.80], "average goals": [0.0, 0.0]},
-        {"name": "Spiel 2: Portugal vs Frankreich", "odds": [3.20, 3, 2.40], "average goals": [0.0, 0.0]},
-        {"name": "Spiel 3: England vs Schweiz", "odds": [2.20, 3.00, 3.70], "average goals": [0.0, 0.0]},
-        {"name": "Spiel 4: Niederlande vs Türkei", "odds": [1.63, 4.00, 5.25], "average goals": [0.0, 0.0]}
+        {"name": "Spiel 1: Spanien vs Deutschland", "odds": [2.65, 3.00, 2.80], "average goals": [0.0, 0.0]},
+        {"name": "Spiel 2: Portugal vs Frankreich", "odds": [3.20, 3.00, 2.40], "average goals": [0.0, 0.0]},
+        {"name": "Spiel 3: England vs Schweiz", "odds": [2.20, 2.90, 3.80], "average goals": [0.0, 0.0]},
+        {"name": "Spiel 4: Niederlande vs Türkei", "odds": [1.58, 3.90, 6.00], "average goals": [0.0, 0.0]}
     ]
 
     semifinals = [
-        {"name": "Spiel 1: vs ", "odds": [3.00, 3.00, 3.00], "average goals": [0.0, 0.0]},
-        {"name": "Spiel 2: vs ", "odds": [3.00, 3.00, 3.00], "average goals": [0.0, 0.0]}
+        {"name": "Spiel 1: Spanien vs Frankreich", "odds": [2.65, 2.85, 3.00], "average goals": [0.0, 0.0]},
+        {"name": "Spiel 2: Niederlande vs England", "odds": [3.10, 2.80, 2.60], "average goals": [0.0, 0.0]}
+    ]
+    
+    final = [
+        {"name": "Letztes Spiel: vs", "odds": [3.00, 3.00, 3.00], "average goals": [0.0, 0.0]}
     ]
 
-    number_of_games = 4 
+    number_of_games = 5
     scores = [ # How many goals each team scored per game
-        [3, 1, 1, 4], # Spanien
-        [5, 2, 1, 2], # Deutschland
-        [2, 3, 0, 0], # Portugal
-        [1, 0, 1, 1], # Frankreich
-        [1, 1, 0, 2], # England
-        [3, 1, 1, 2], # Schweiz
-        [2, 0, 2, 3], # Niederlande
-        [3, 0, 2, 2]  # Türkei
+        # [5, 2, 1, 2, 1], # Deutschland out :(
+        # [ 2, 3, 0, 0, 0], # Portugal out
+        # [3, 1, 1, 2, 1], # Schweiz out
+        # [3, 0, 2, 2, 1]  # Türkei out
+        [3, 1, 1, 4, 2], # Spanien
+        [1, 0, 1, 1, 0], # Frankreich
+        [2, 0, 2, 3, 2], # Niederlande
+        [1, 1, 0, 2, 1], # England
     ]
+    games = semifinals # change here what games shall be predicted
+    
     avg_goals = average_goal_calc(scores, number_of_games) # [2.25, 2.5, 1.25, 0.75, 1.0, 1.75, 1.75, 1.75]
     counter = 0
-    for game in quarterfinals:
+    for game in games:
         game['average goals'] = avg_goals[counter], avg_goals[counter + 1]
         counter += 2
     output_file = 'output.txt'
     clean_output(output_file)
     
     output = ""
-    games = quarterfinals # change here what games shall be predicted
     for game in games:
         output += analyze_game(game)
         if not game == games[len(games) - 1]:
-            output += "\n" + "-" * 50 + "\n"
+            output += "\n" + "-" * 50 + "\n\n"
     printer(output, output_file)
 
 if __name__ == "__main__":
