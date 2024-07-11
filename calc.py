@@ -19,8 +19,8 @@ def expected_goals(probabilities, avg_goals): # avg goals is a variable that can
     Calculate expected goals for each team.
     """
     # average goals after the group phase per game are 2.25
-    home_goals = avg_goals[0] * probabilities[0] # avg goals of first team * chance of first team winning
-    away_goals = avg_goals[1] * probabilities[2] # avg goals of other team * chance of the other team winning
+    home_goals = avg_goals[0] * probabilities[0] * 2 # avg goals of first team * chance of first team winning
+    away_goals = avg_goals[1] * probabilities[2] * 2 # avg goals of other team * chance of the other team winning
     return home_goals, away_goals
 
 def exact_score_probabilities(home_goals, away_goals, max_goals=5): # function calculates every chance of every score until max goals variable
@@ -158,27 +158,27 @@ def main():
 
     semifinals = [
         {"name": "Spiel 1: Spanien vs Frankreich", "odds": [2.65, 2.85, 3.00], "average goals": [0.0, 0.0]},
-        {"name": "Spiel 2: Niederlande vs England", "odds": [3.10, 2.80, 2.60], "average goals": [0.0, 0.0]}
+        {"name": "Spiel 2: Niederlande vs England", "odds": [3.20, 2.80, 2.60], "average goals": [0.0, 0.0]}
     ]
     
     final = [
-        {"name": "Letztes Spiel: vs", "odds": [3.00, 3.00, 3.00], "average goals": [0.0, 0.0]}
+        {"name": "Letztes Spiel: Spanien vs England", "odds": [2.45, 2.85, 3.40], "average goals": [0.0, 0.0]}
     ]
 
-    number_of_games = 5
+    number_of_games = 6
     scores = [ # How many goals each team scored per game
         # [5, 2, 1, 2, 1], # Deutschland out :(
-        # [ 2, 3, 0, 0, 0], # Portugal out
+        # [2, 3, 0, 0, 0], # Portugal out
         # [3, 1, 1, 2, 1], # Schweiz out
-        # [3, 0, 2, 2, 1]  # Türkei out
-        [3, 1, 1, 4, 2], # Spanien
-        [1, 0, 1, 1, 0], # Frankreich
-        [2, 0, 2, 3, 2], # Niederlande
-        [1, 1, 0, 2, 1], # England
+        # [3, 0, 2, 2, 1], # Türkei out
+        # [1, 0, 1, 1, 0, 1], # Frankreich out
+        # [2, 0, 2, 3, 2, 1], # Niederlande out
+        [3, 1, 1, 4, 2, 2], # Spanien
+        [1, 1, 0, 2, 1, 2]  # England
     ]
-    games = semifinals # change here what games shall be predicted
+    games = final # change here what games shall be predicted
     
-    avg_goals = average_goal_calc(scores, number_of_games) # [2.25, 2.5, 1.25, 0.75, 1.0, 1.75, 1.75, 1.75]
+    avg_goals = average_goal_calc(scores, number_of_games)
     counter = 0
     for game in games:
         game['average goals'] = avg_goals[counter], avg_goals[counter + 1]

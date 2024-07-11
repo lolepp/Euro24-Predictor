@@ -13,9 +13,46 @@ To install numpy you may need to run
 
 This is the given output of the current version:
 
-# Output for the semifinals
+# Output for the finals
 
 Remember, there cannot be a draw in the round of 16 and higher
+
+Note, that for the finals the expected goals have been doubled just for the sake of the finals and the teams giving 110 %.
+
+    Letztes Spiel: Spanien vs England
+    Wahrscheinlichkeiten: [0.3876, 0.3332, 0.2793]
+    Durchschnittstore Heim: 2.1666666666666665, Durchschnittstore Auswärts: 1.1666666666666667
+    Erwartete Tore Heim: 1.68, Erwartete Tore Auswärts: 0.65
+    Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
+    Punktzahl (1, 0): 16.32%
+    Punktzahl (2, 0): 13.71%
+    Punktzahl (1, 1): 10.64%
+    Punktzahl (0, 0): 9.72%
+    Punktzahl (2, 1): 8.93%
+    Punktzahl (3, 0): 7.67%
+    Punktzahl (0, 1): 6.33%
+    Punktzahl (3, 1): 5.00%
+    Punktzahl (1, 2): 3.47%
+    Punktzahl (4, 0): 3.22%
+    Punktzahl (2, 2): 2.91%
+    Punktzahl (4, 1): 2.10%
+    Punktzahl (0, 2): 2.06%
+    Punktzahl (3, 2): 1.63%
+    Punktzahl (5, 0): 1.08%
+    Punktzahl (1, 3): 0.75%
+    Punktzahl (5, 1): 0.71%
+    Punktzahl (4, 2): 0.68%
+    Punktzahl (2, 3): 0.63%
+    Punktzahl (0, 3): 0.45%
+    Punktzahl (3, 3): 0.35%
+    Punktzahl (5, 2): 0.23%
+    Punktzahl (4, 3): 0.15%
+    Punktzahl (1, 4): 0.12%
+    Punktzahl (2, 4): 0.10%
+
+
+# Output for the semifinals
+
 
     Spiel 1: Spanien vs Frankreich
     Wahrscheinlichkeiten: [0.3555, 0.3305, 0.314]
@@ -39,24 +76,24 @@ Remember, there cannot be a draw in the round of 16 and higher
     --------------------------------------------------
 
     Spiel 2: Niederlande vs England
-    Wahrscheinlichkeiten: [0.3031, 0.3356, 0.3614]
+    Wahrscheinlichkeiten: [0.2964, 0.3388, 0.3648]
     Durchschnittstore Heim: 1.8, Durchschnittstore Auswärts: 1.0
-    Erwartete Tore Heim: 0.55, Erwartete Tore Auswärts: 0.36
+    Erwartete Tore Heim: 0.53, Erwartete Tore Auswärts: 0.36
     Alle möglichen Punktzahlen und deren Wahrscheinlichkeiten:
-    Punktzahl (0, 0): 40.38%
-    Punktzahl (1, 0): 22.03%
-    Punktzahl (0, 1): 14.59%
-    Punktzahl (1, 1): 7.96%
-    Punktzahl (2, 0): 6.01%
-    Punktzahl (0, 2): 2.64%
-    Punktzahl (2, 1): 2.17%
-    Punktzahl (1, 2): 1.44%
-    Punktzahl (3, 0): 1.09%
-    Punktzahl (3, 1): 0.39%
+    Punktzahl (0, 0): 40.72%
+    Punktzahl (1, 0): 21.73%
+    Punktzahl (0, 1): 14.86%
+    Punktzahl (1, 1): 7.93%
+    Punktzahl (2, 0): 5.80%
+    Punktzahl (0, 2): 2.71%
+    Punktzahl (2, 1): 2.11%
+    Punktzahl (1, 2): 1.45%
+    Punktzahl (3, 0): 1.03%
     Punktzahl (2, 2): 0.39%
-    Punktzahl (0, 3): 0.32%
-    Punktzahl (1, 3): 0.17%
-    Punktzahl (4, 0): 0.15%
+    Punktzahl (3, 1): 0.38%
+    Punktzahl (0, 3): 0.33%
+    Punktzahl (1, 3): 0.18%
+    Punktzahl (4, 0): 0.14%
 
 
 # Output for the quarterfinals
